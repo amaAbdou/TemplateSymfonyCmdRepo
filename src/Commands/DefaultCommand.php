@@ -16,6 +16,9 @@ class DefaultCommand extends Command
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        throw new NotImplementedException(__FUNCTION__);
+        $couter = new Couter();
+        $couter->increment();
+
+        file_put_contents(serialize($couter->getEvets()));
     }
 }
